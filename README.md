@@ -28,13 +28,13 @@
     Complex(Complex &);
    
     // Aрифметические oперации (+, -, *, /, =) и операции сравнения (==, !=);
-    operator +(Complex &);              // operator +(double);
-    operator -(Complex &);              // operator -(double);
+    operator +(Complex &);              // operator +(Complex + Complex);
+    operator -(Complex &);              // operator -(Complex - Complex);
     ...                                 // ...
     
     // Oперации ввода вывода (<<, >>);
-    operator << (Complex &);
-    operator >> (Complex &);
+    operator << (Complex &); // friend operator, (ostream + Complex)
+    operator >> (Complex &); // friend operator, (istream + Complex)
   
   private:
     ...
@@ -85,7 +85,7 @@
     show();
 	
 	// Перегрузка оператора вывода в консоль (<<)
-    operator << (Complex &);
+    operator << (Stack &); // friend operator, (ostream + Stack)
 
   private:
     ...

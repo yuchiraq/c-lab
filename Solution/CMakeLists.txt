@@ -5,4 +5,4 @@ project(Solution LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(Solution main.cpp complex.h complex.cpp)
+add_executable(Solution main.cpp complex.h complex.cpp stack.h stack.cpp)

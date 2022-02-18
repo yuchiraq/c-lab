@@ -33,6 +33,9 @@ void Stack::push(const Complex &number){
 }
 
 Complex Stack::pop(){
+    if(this->isEmpty()){
+        throw "Error, stack is empty!!!";
+    }
     sizeReal--;
     return array[sizeReal];
 }
@@ -58,20 +61,29 @@ int Stack::size() const{
 }
 
 void Stack::show() const{
-    std::cout << this;
+    //std::cout << this;
+    std::cout << std::endl;
+    for(int i = 0; i < this->sizeReal; i++){
+        std::cout << i + 1 << ") " << this->array[i] << std::endl;
+    }
+    std::cout << std::endl;
 }
 
-void Stack::change(int place, const double &realNew, const double &imaginaryNew){
+void Stack::change(int place, const Complex &new_number){
     if(place > sizeReal){
-        std::cout << "Error, out of stack";
+        std::cout << "Error, out of stack" << std::endl;
+        return;
+    }else if (place == sizeReal) {
+        push(new_number);
         return;
     }
-    array[--place] = Complex(realNew, imaginaryNew);
+    array[--place] = Complex(new_number);
 }
 
 std::ostream& operator << (std::ostream& stream, const Stack &stack){
+    stream << std::endl;
     for(int i = 0; i < stack.sizeReal; i++){
-        stream << i << ") " << stack.array[i] << std::endl;
+        stream << i + 1 << ") " << stack.array[i] << std::endl;
     }
     return stream;
 }

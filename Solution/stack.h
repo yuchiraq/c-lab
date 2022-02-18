@@ -25,7 +25,7 @@ public:
     // Вывод всех элементов в консоль
     void show() const;
 
-    void change(int place, const double &realNew, const double &imaginaryNew);
+    void change(int place, const Complex &new_number);
 
     // Перегрузка оператора вывода в консоль (<<)
     friend std::ostream& operator << (std::ostream& stream, const Stack &stack);

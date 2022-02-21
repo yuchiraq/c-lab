@@ -14,6 +14,11 @@ public:
 	void sceduleEvent(IAsyncEvent *asyncEvent);
 
 	///
+	/// Pop from queue
+	/// 
+	void popEvents();
+
+	///
 	/// @return number of sceduled events
 	///
 	size_t getNumberOfEvents() const;

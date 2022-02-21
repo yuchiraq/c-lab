@@ -1,6 +1,7 @@
 #include <iostream>
 #include "EventHandler.h"
 #include "IAsyncEvent.h"
+#include "UserAsyncEvent.h"
 
 
 int main() {

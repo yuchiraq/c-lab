@@ -21,7 +21,7 @@
     <ClCompile Include="EventHandler.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
-    <ClCompile Include="IAsyncEvent.cpp">
+    <ClCompile Include="UserAsyncEvent.cpp">
       <Filter>Исходные файлы</Filter>
     </ClCompile>
   </ItemGroup>
@@ -30,6 +30,9 @@
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
     <ClInclude Include="IAsyncEvent.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="UserAsyncEvent.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

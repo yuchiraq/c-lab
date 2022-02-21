@@ -140,12 +140,13 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EventHandler.cpp" />
-    <ClCompile Include="IAsyncEvent.cpp" />
+    <ClCompile Include="UserAsyncEvent.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="IAsyncEvent.h" />
+    <ClInclude Include="UserAsyncEvent.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

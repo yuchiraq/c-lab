@@ -8,12 +8,16 @@ EventHandler* EventHandler::singleton = nullptr;
 void EventHandler::sceduleEvent(IAsyncEvent* asyncEvent)
 {
     queue.push(asyncEvent);
-    if (getNumberOfEvents() == 5) {
-        std::cout << "\t\tNew iteration" << std::endl;
-        for (int i = 0; i < 5; i++) {
-            queue.front()->executeEvent();
-            queue.pop();
-        }
+    if (getNumberOfEvents() == 5)
+        popEvents();
+}
+
+void EventHandler::popEvents()
+{
+    std::cout << "\t\tNew iteration" << std::endl;
+    for (int i = 0; i < 5; i++) {
+        queue.front()->executeEvent();
+        queue.pop();
     }
 }
 

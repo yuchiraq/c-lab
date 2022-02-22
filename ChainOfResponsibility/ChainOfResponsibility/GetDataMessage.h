@@ -1,0 +1,35 @@
+#pragma once
+#include "IMessage.h"
+
+class GetDataMessage :
+    public IMessage
+{
+public:
+
+    /*enum MessageType
+    {
+        GET_DATA,
+        UPDATE_DATA
+    };*/
+
+    // Сеттеры
+    void setFrom(const std::string& from);
+    void setTo(const std::string& to);
+    void setBody(const std::string& body);
+
+    // Геттеры
+    const std::string& getFrom();
+    const std::string& getTo();
+    const std::string& getBody();
+
+    // Вывод сообщения в консоль
+    void show();
+
+    // Каждый наследник возвращает свой тип
+    IMessage::MessageType getMessageType() const;
+
+private:
+    std::string mFrom;
+    std::string mTo;
+    std::string mBody;
+};

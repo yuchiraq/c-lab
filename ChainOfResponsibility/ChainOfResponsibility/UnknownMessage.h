@@ -1,7 +1,7 @@
 #pragma once
 #include "IMessage.h"
 
-class UpdateDataMessage :
+class UnknownMessage :
     public IMessage
 {
 public:
@@ -27,3 +27,4 @@ private:
     std::string mTo;
     std::string mBody;
 };
+

@@ -144,6 +144,7 @@
     <ClCompile Include="GetDataService.cpp" />
     <ClCompile Include="ServiceContainer.cpp" />
     <ClCompile Include="Source.cpp" />
+    <ClCompile Include="UnknownMessage.cpp" />
     <ClCompile Include="UpdateDataMessage.cpp" />
     <ClCompile Include="UpdateDataService.cpp" />
   </ItemGroup>
@@ -154,6 +155,7 @@
     <ClInclude Include="IMessage.h" />
     <ClInclude Include="IService.h" />
     <ClInclude Include="ServiceContainer.h" />
+    <ClInclude Include="UnknownMessage.h" />
     <ClInclude Include="UpdateDataMessage.h" />
     <ClInclude Include="UpdateDataService.h" />
   </ItemGroup>

@@ -6,12 +6,6 @@ class GetDataMessage :
 {
 public:
 
-    /*enum MessageType
-    {
-        GET_DATA,
-        UPDATE_DATA
-    };*/
-
     // Сеттеры
     void setFrom(const std::string& from);
     void setTo(const std::string& to);

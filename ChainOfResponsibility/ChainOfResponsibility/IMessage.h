@@ -8,7 +8,8 @@ public:
     enum MessageType
     {
         GET_DATA,
-        UPDATE_DATA
+        UPDATE_DATA,
+        UNKNOWN
     };
 
     // Сеттеры

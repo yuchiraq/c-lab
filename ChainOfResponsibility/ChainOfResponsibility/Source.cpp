@@ -2,7 +2,19 @@
 #include "IMessage.h"
 #include "GetDataMessage.h"
 #include "UpdateDataMessage.h"
+#include "UnknownMessage.h"
 #include "ServiceContainer.h"
+
+
+/*
+* Немного поменял структуру ServiceContainer::addService()
+		добавляет 3 сервиса(не принимает сервис для добавления),
+		закинул в private, вызывается конструктором
+
+* В MessageType добавил UNKNOWN
+		посмотреть что будет с неизвестным message
+*/
+
 
 int main()
 {
@@ -48,6 +60,17 @@ int main()
 	std::cout << "Разрешённый пользователь \"admin\" >> " << std::endl;
 	container->handleMessage(message);
 
-	
+	delete(message);
+
+	message = new(UnknownMessage);
+	message->setBody("body");
+	message->setTo("listener");
+
+	std::cout << std::endl << "UpdateDataMessage:" << std::endl;
+
+	message->setFrom("user");
+	std::cout << "Разрешённый пользователь \"user\" >> " << std::endl;
+	container->handleMessage(message);
+
 	return 1;
 }

@@ -66,7 +66,7 @@ int main()
 	message->setBody("body");
 	message->setTo("listener");
 
-	std::cout << std::endl << "UpdateDataMessage:" << std::endl;
+	std::cout << std::endl << "UnknownMessage:" << std::endl;
 
 	message->setFrom("user");
 	std::cout << "Разрешённый пользователь \"user\" >> " << std::endl;

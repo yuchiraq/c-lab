@@ -25,5 +25,5 @@ int main() {
 		EventHandler::GetInstance()->sceduleEvent(event);
 	}
 
-	return 1;
+	return 0;
 }

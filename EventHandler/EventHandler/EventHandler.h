@@ -14,11 +14,6 @@ public:
 	void sceduleEvent(IAsyncEvent *asyncEvent);
 
 	///
-	/// Pop from queue
-	/// 
-	void popEvents();
-
-	///
 	/// @return number of sceduled events
 	///
 	size_t getNumberOfEvents() const;
@@ -27,11 +22,18 @@ public:
 
 private:
 
+	///
+	/// Pop from queue
+	/// 
+	void popEvents();
+
 	std::queue<IAsyncEvent*> queue;
 
 	/*		Singleton	 */
 	EventHandler() = default;
-	EventHandler(EventHandler & other) = delete;
+	EventHandler(EventHandler& other) = delete;
+	EventHandler(EventHandler&& other) = default;
+	EventHandler& operator=(EventHandler&& other) = default;
 
 	static EventHandler* singleton;
 

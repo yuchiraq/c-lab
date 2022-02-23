@@ -1,5 +1,5 @@
 #pragma once
-#include <map>
+#include <list>
 #include "IMessage.h"
 #include "IService.h"
 #include "AuthService.h"
@@ -10,16 +10,14 @@ class ServiceContainer
 {
 public:
 
-    ServiceContainer();
+    // Добавляет сервисЫ в контейнер
+    void addService(IService* service);
 
     // Обрабатывает сообщение на контейнере сервисов
     void handleMessage(IMessage* message);
 
 private:
 
-    // Добавляет сервисЫ в контейнер
-    void addService();
-
     // переменная-контейнер с указателями на сервисы (используйте подходящий, известный вам STL контейнер)
-    std::map<std::string, IService*> services;
+    std::list<IService*> services;
 };

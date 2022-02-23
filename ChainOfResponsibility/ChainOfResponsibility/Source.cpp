@@ -7,10 +7,6 @@
 
 
 /*
-* Немного поменял структуру ServiceContainer::addService()
-		добавляет 3 сервиса(не принимает сервис для добавления),
-		закинул в private, вызывается конструктором
-
 * В MessageType добавил UNKNOWN
 		посмотреть что будет с неизвестным message
 */
@@ -22,6 +18,14 @@ int main()
 
 	ServiceContainer* container = new(ServiceContainer);
 	IMessage* message;
+
+	IService* service;
+	service = new(AuthService);
+	container->addService(service);
+	service = new(GetDataService);
+	container->addService(service);
+	service = new(UpdateDataService);
+	container->addService(service);
 
 	message = new(GetDataMessage);
 	message->setBody("body");
@@ -72,5 +76,5 @@ int main()
 	std::cout << "Разрешённый пользователь \"user\" >> " << std::endl;
 	container->handleMessage(message);
 
-	return 1;
+	return 0;
 }
